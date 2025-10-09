@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1760009381543,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1760009495398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,10 +75,10 @@\n 🚀 Cómo Ejecutar\n Requisitos:\n \n     Dart SDK instalado\n-\n     Editor de código (VS Code recomendado)\n+    Ejecutar \"dart pub get\" en el directorio de darts para incorporar la libreria antes de ejecutar el ejercico del 9 de octubre  \n \n Ejecución:\n bash\n \n"
                 }
             ],
             "date": 1760009381543,

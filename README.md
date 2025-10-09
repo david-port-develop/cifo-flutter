@@ -76,8 +76,8 @@ Funciones Implementadas:
 Requisitos:
 
     Dart SDK instalado
-
     Editor de código (VS Code recomendado)
+    Ejecutar "dart pub get" en el directorio de darts para incorporar la libreria antes de ejecutar el ejercico del 9 de octubre  
 
 Ejecución:
 bash
