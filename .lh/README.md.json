@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1760009381543,
@@ -12,6 +12,14 @@
                 {
                     "date": 1760009495398,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,10 +75,10 @@\n 🚀 Cómo Ejecutar\n Requisitos:\n \n     Dart SDK instalado\n-\n     Editor de código (VS Code recomendado)\n+    Ejecutar \"dart pub get\" en el directorio de darts para incorporar la libreria antes de ejecutar el ejercico del 9 de octubre  \n \n Ejecución:\n bash\n \n"
+                },
+                {
+                    "date": 1760009648967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,17 +115,8 @@\n     Feedback inmediato al usuario\n \n     Experiencia de usuario mejorada\n \n-📁 Estructura del Proyecto\n-text\n-\n-ejercicios_dart/\n-├── ejercicios_7_oct.dart    # 40 ejercicios de fundamentos\n-├── ejercicios_8_oct.dart    # 15 ejercicios de controles de flujo\n-├── ejercicios_9_oct.dart    # 20 funciones con menú interactivo\n-└── README.md               # Este archivo\n-\n 💡 Metodología de Aprendizaje\n \n     Día 1: Fundamentos (sintaxis, estructuras básicas)\n \n"
+                },
+                {
+                    "date": 1760009692045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,7 +124,5 @@\n \n     Día 3: Funciones (modularización, reutilización)\n \n Cada día construye sobre los conceptos del anterior, creando una progresión de aprendizaje natural.\n-👨‍💻 Autor\n-\n-Ejercicios de práctica en Dart - Progresión de aprendizaje de 3 días\n\\ No newline at end of file\n+👨‍💻 Autor David Elisava Profesor Chema\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1760009381543,

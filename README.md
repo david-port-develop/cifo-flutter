@@ -116,15 +116,6 @@ Interactividad:
 
     Experiencia de usuario mejorada
 
-📁 Estructura del Proyecto
-text
-
-ejercicios_dart/
-├── ejercicios_7_oct.dart    # 40 ejercicios de fundamentos
-├── ejercicios_8_oct.dart    # 15 ejercicios de controles de flujo
-├── ejercicios_9_oct.dart    # 20 funciones con menú interactivo
-└── README.md               # Este archivo
-
 💡 Metodología de Aprendizaje
 
     Día 1: Fundamentos (sintaxis, estructuras básicas)
@@ -134,6 +125,4 @@ ejercicios_dart/
     Día 3: Funciones (modularización, reutilización)
 
 Cada día construye sobre los conceptos del anterior, creando una progresión de aprendizaje natural.
-👨‍💻 Autor
-
-Ejercicios de práctica en Dart - Progresión de aprendizaje de 3 días
+👨‍💻 Autor David Elisava Profesor Chema
