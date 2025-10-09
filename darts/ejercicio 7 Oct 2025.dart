@@ -1,9 +1,11 @@
 import 'dart:io';
 
-/*Función para pedir número entero hasta que sea válido
-  como la entrada puede ser un alfanumérico y crashea el programa hay que comprobar cada tipo de dato en las siguientes
-  funciones*/
+/*Como la entrada puede ser un alfanumérico y crashea el programa hay que comprobar cada tipo de dato en las siguientes
+  funciones. Basicamente cada funcion chequea null o .isNotEmpty en la entrada.
+  Se usa while para que entre en un bucle en el que no se sale hasta que la entrada es del tipo correcto
+  */
 
+// Función para pedir un número entero hasta que sea válido
 int pedirNumero(String mensaje) {
   int? numero;
   while (numero == null) {
