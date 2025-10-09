@@ -1,0 +1,10 @@
+name: dart_ejercicios
+description: Ejercicios de Dart Flutter del curso de Cifo la violeta
+
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  intl: ^0.20.0

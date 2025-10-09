@@ -1,0 +1,26 @@
+{
+    "sourceFile": "darts/pubspec.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1760005373140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1760005452666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-name: dart-ejercicios\n+name: dart_ejercicios\n description: Ejercicios de Dart Flutter del curso de Cifo la violeta\n \n version: 1.0.0\n \n"
+                },
+                {
+                    "date": 1760005481900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n environment:\n   sdk: '>=3.0.0 <4.0.0'\n \n dependencies:\n-  intl: ^0.19.0\n\\ No newline at end of file\n+  intl: ^0.20.0\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1760005373140,
+            "name": "Commit-0",
+            "content": "name: dart-ejercicios\ndescription: Ejercicios de Dart Flutter del curso de Cifo la violeta\n\nversion: 1.0.0\n\nenvironment:\n  sdk: '>=3.0.0 <4.0.0'\n\ndependencies:\n  intl: ^0.19.0"
+        }
+    ]
+}
