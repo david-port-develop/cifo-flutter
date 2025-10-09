@@ -350,11 +350,12 @@ void main() {
       if (subOpcion == 1) {
         double celsius = pedirDouble('Ingresa grados Celsius:');
         double fahrenheit = celsiusAFahrenheit(celsius);
-        print('$celsius°C = ${formatearDouble(fahrenheit)}°F');
+        print('${formatearDouble(celsius)} = ${formatearDouble(fahrenheit)}°F');
       } else if (subOpcion == 2) {
         double fahrenheit = pedirDouble('Ingresa grados Fahrenheit:');
         double celsius = fahrenheitACelsius(fahrenheit);
-        print('$fahrenheit°F = ${formatearDouble(fahrenheit)}°C');
+        print(
+            '${formatearDouble(fahrenheit)}°F = ${formatearDouble(fahrenheit)}°C');
       } else {
         print('Opción no válida');
       }
