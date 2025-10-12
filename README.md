@@ -1,128 +1,76 @@
-Ejercicios de Dart - Octubre 2025
+# Ejercicios de Dart - Octubre 2025
 
-Este repositorio contiene una colección completa de ejercicios en Dart organizados por días, diseñados para practicar desde conceptos básicos hasta funciones avanzadas.
-📅 Ejercicios 7 de Octubre - Fundamentos
+**Curso:** Flutter en CIFO La Violeta  
+**Alumno:** David Port  
+**Profesor:** Chema  
 
-Temas: Condicionales, Bucles y Listas
-Características:
+Este repositorio contiene una colección completa de ejercicios en Dart organizados por días, diseñados para practicar desde conceptos básicos hasta programación asíncrona y manejo de errores.
 
-    40 ejercicios organizados en 4 bloques
+## 📅 Ejercicios Disponibles
 
-    Validación robusta de entradas del usuario
+- **7 de Octubre:** Fundamentos - Condicionales, Bucles y Listas
+- **8 de Octubre:** Controles de Flujo - Condicionales Avanzados y Bucles  
+- **9 de Octubre:** Funciones - Modularización y Reutilización
+- **10 de Octubre:** Funciones Avanzadas - Async/Await y Manejo de Errores
 
-    Manejo de errores con try-catch
+## 🚀 Cómo Ejecutar
 
-    Uso de while para validación hasta entrada correcta
+### Requisitos:
+- Dart SDK instalado
+- Editor de código (VS Code recomendado)
 
-    Ejercicios interactivos con stdin.readLineSync()
+### Estructura del Proyecto:
+```
+darts/
+├── pubspec.yaml
+├── funciones_comunes.dart
+├── ejercicios_7_oct.dart
+├── ejercicios_8_oct.dart
+├── ejercicios_9_oct.dart
+├── ejercicios_10_oct.dart
+└── README.md
+```
 
-Funciones de Validación Incluidas:
+### Ejecución:
+```bash
+# Instalar dependencias
+dart pub get
 
-    pedirNumero() - Valida números enteros
+# Instalar dependencias
+dart pub get
 
-    pedirDouble() - Valida números decimales
+# Ejecutar ejercicios (usar comillas por los espacios)
+dart "ejercicios 7 oct.dart"
+dart "ejercicios 8 oct.dart"
+dart "ejercicios 9 oct.dart"
+dart "ejercicios 10 oct.dart"
 
-    pedirTexto() - Valida texto no vacío
+# Alternativa en sistemas Unix/Linux/Mac:
+dart ejercicios\ 7\ oct.dart
+dart ejercicios\ 8\ oct.dart  
+dart ejercicios\ 9\ oct.dart
+dart ejercicios\ 10\ oct.dart
 
-    pedirLetra() - Valida una sola letra
+## 🛠️ Características Técnicas
 
-📅 Ejercicios 8 de Octubre - Controles de Flujo
+### Módulo de Funciones Comunes:
+- Validación robusta de entradas numéricas y de texto
+- Soporte para formato decimal europeo (coma como separador)
+- Funciones de formateo profesional de números
+- Reutilización de código entre todos los ejercicios
 
-Temas: Condicionales Avanzados y Bucles
-Estructura:
+### Manejo de Errores:
+- Validación en tiempo de ejecución
+- Mensajes de error descriptivos
+- Recuperación graceful de fallos
+- Excepciones específicas por tipo de error
 
-    15 ejercicios prácticos
+### Programación Asíncrona:
+- Simulación de operaciones de larga duración
+- Coordinación de múltiples tareas async
+- Manejo de errores en operaciones asíncronas
+- Flujos de ejecución controlados
 
-    Bloque 1: Condicionales (if/else if, switch)
+---
 
-    Bloque 2: Bucles (for, for-in, while, do-while)
-
-    Explicación de una línea después de cada ejercicio
-
-Ejercicios Destacados:
-
-    Clasificación de edades y notas
-
-    Menú de operaciones matemáticas
-
-    Juego de adivinanza con contador de intentos
-
-    Validación de confirmación de salida
-
-📅 Ejercicios 9 de Octubre - Funciones
-
-Temas: Funciones y Modularización
-Contenido:
-
-    20 funciones organizadas en 2 bloques
-
-    Bloque 1: Funciones básicas (matemáticas, strings, listas)
-
-    Bloque 2: Retos combinados (aplicaciones prácticas)
-
-    Menú interactivo para probar todas las funciones
-
-Funciones Implementadas:
-
-    Cálculos matemáticos (factorial, IMC, conversiones)
-
-    Manipulación de strings (vocales, palíndromos)
-
-    Procesamiento de listas (filtrado, búsqueda, promedios)
-
-    Validaciones y utilidades varias (conversión de decimales al formato europeo)
-
-🚀 Cómo Ejecutar
-Requisitos:
-
-    Dart SDK instalado
-    Editor de código (VS Code recomendado)
-    Ejecutar "dart pub get" en el directorio de darts para incorporar la libreria antes de ejecutar el ejercico del 9 de octubre  
-
-Ejecución:
-bash
-
-# Para cada archivo de ejercicios:
-dart "nombre del archivo.dart"
-
-🛠️ Características Técnicas
-Validación de Entradas:
-
-    Uso de while para persistir hasta entrada válida
-
-    Manejo de errores con try-catch
-
-    Mensajes de error descriptivos
-
-    Validación de rangos y formatos
-
-Organización del Código:
-
-    Código modular y reutilizable
-
-    Funciones con responsabilidad única
-
-    Comentarios explicativos
-
-    Estructura clara y mantenible
-
-Interactividad:
-
-    Menús navegables
-
-    Entradas validadas en tiempo real
-
-    Feedback inmediato al usuario
-
-    Experiencia de usuario mejorada
-
-💡 Metodología de Aprendizaje
-
-    Día 1: Fundamentos (sintaxis, estructuras básicas)
-
-    Día 2: Controles de flujo (lógica programática)
-
-    Día 3: Funciones (modularización, reutilización)
-
-Cada día construye sobre los conceptos del anterior, creando una progresión de aprendizaje natural.
-👨‍💻 Autor David Elisava Profesor Chema
+**¡Proyecto de aprendizaje completo de Dart para el curso de Flutter!** 🎯

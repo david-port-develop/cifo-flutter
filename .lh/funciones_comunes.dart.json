@@ -1,0 +1,18 @@
+{
+    "sourceFile": "funciones_comunes.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1760269917186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1760269917186,
+            "name": "Commit-0",
+            "content": "import 'dart:io';\nimport 'package:intl/intl.dart';\n\n// Funciones de validación para entrada de usuario\nint pedirNumero(String mensaje) {\n  int? numero;\n  while (numero == null) {\n    print(mensaje);\n    String? input = stdin.readLineSync();\n    if (input != null && input.isNotEmpty) {\n      try {\n        numero = int.parse(input);\n      } catch (e) {\n        print('Error: \"$input\" no es un número válido. Intenta de nuevo.');\n      }\n    } else {\n      print('Error: No ingresaste ningún valor. Intenta de nuevo.');\n    }\n  }\n  return numero;\n}\n\ndouble pedirDouble(String mensaje) {\n  double? numero;\n  while (numero == null) {\n    print(mensaje);\n    print('(Formato europeo: ej: 1234,56 o 1.234,56)');\n    String? input = stdin.readLineSync();\n    if (input != null && input.isNotEmpty) {\n      try {\n        String inputParseable = input\n            .replaceAll(' ', '')\n            .replaceAll('.', '')\n            .replaceAll(',', '.');\n        numero = double.parse(inputParseable);\n      } catch (e) {\n        print('Error: \"$input\" no es un número válido.');\n        print('Ejemplos válidos: 12,5 - 1234,56 - 1.234,56');\n      }\n    } else {\n      print('Error: No ingresaste ningún valor. Intenta de nuevo.');\n    }\n  }\n  return numero;\n}\n\nString pedirTexto(String mensaje) {\n  String? texto;\n  while (texto == null || texto.isEmpty) {\n    print(mensaje);\n    texto = stdin.readLineSync();\n    if (texto == null || texto.isEmpty) {\n      print('Error: No ingresaste ningún valor. Intenta de nuevo.');\n    }\n  }\n  return texto;\n}\n\nString pedirLetra(String mensaje) {\n  String? letra;\n  while (letra == null || letra.isEmpty || letra.length > 1) {\n    print(mensaje);\n    letra = stdin.readLineSync();\n    if (letra == null || letra.isEmpty) {\n      print('Error: No ingresaste ningún valor. Intenta de nuevo.');\n    } else if (letra.length > 1) {\n      print('Error: Debes ingresar solo una letra. Intenta de nuevo.');\n      letra = null;\n    }\n  }\n  return letra.toLowerCase();\n}\n\n// Funciones de formateo\nString formatearDouble(double numero) {\n  final formato = NumberFormat('#,##0.00', 'es_ES');\n  return formato.format(numero);\n}\n\nString formatearNumero(double numero) {\n  return NumberFormat('#,##0.00', 'es_ES').format(numero);\n}"
+        }
+    ]
+}

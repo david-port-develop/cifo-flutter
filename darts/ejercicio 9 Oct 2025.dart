@@ -285,7 +285,6 @@ void menuPrincipal() {
 
 void main() {
   print('=== EJERCICIOS 9-OCT-2025 - FUNCIONES EN DART ===');
-
   int opcion;
   do {
     menuPrincipal();
