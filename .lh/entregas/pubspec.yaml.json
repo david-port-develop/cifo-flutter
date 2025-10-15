@@ -1,0 +1,18 @@
+{
+    "sourceFile": "entregas/pubspec.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1760532448995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1760532448995,
+            "name": "Commit-0",
+            "content": "name: dart_entregas\ndescription: Entregas de Dart Flutter del curso de Cifo la violeta\n\nversion: 1.0.0\n\nenvironment:\n  sdk: '>=3.0.0 <4.0.0'\n\ndependencies:\n  intl: ^0.20.0"
+        }
+    ]
+}

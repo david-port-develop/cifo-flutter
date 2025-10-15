@@ -1,0 +1,40 @@
+{
+  "roots": [
+    "dart_entregas"
+  ],
+  "packages": [
+    {
+      "name": "dart_entregas",
+      "version": "1.0.0",
+      "dependencies": [
+        "intl"
+      ],
+      "devDependencies": []
+    },
+    {
+      "name": "intl",
+      "version": "0.20.2",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "clock",
+      "version": "1.1.2",
+      "dependencies": []
+    },
+    {
+      "name": "path",
+      "version": "1.9.1",
+      "dependencies": []
+    },
+    {
+      "name": "meta",
+      "version": "1.17.0",
+      "dependencies": []
+    }
+  ],
+  "configVersion": 1
+}

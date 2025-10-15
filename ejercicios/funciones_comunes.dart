@@ -28,10 +28,8 @@ double pedirDouble(String mensaje) {
     String? input = stdin.readLineSync();
     if (input != null && input.isNotEmpty) {
       try {
-        String inputParseable = input
-            .replaceAll(' ', '')
-            .replaceAll('.', '')
-            .replaceAll(',', '.');
+        String inputParseable =
+            input.replaceAll(' ', '').replaceAll('.', '').replaceAll(',', '.');
         numero = double.parse(inputParseable);
       } catch (e) {
         print('Error: "$input" no es un número válido.');
