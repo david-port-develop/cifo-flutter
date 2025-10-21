@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ejercicios rest/config/user_service_config.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1761041988684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761042114534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n {\n-  \"apiKey\": \"YOUR_API_KEY_HERE\",\n-  \"baseUrl\": \"https://api.example.com\"\n+  \"apiKey\": \"\",\n+  \"baseUrl\": \"https://reqres.in\"\n }\n"
+                },
+                {
+                    "date": 1761069933375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n {\n-  \"apiKey\": \"\",\n+  \"apiKey\": \"reqres-free-v1\",\n   \"baseUrl\": \"https://reqres.in\"\n }\n"
+                }
+            ],
+            "date": 1761041988684,
+            "name": "Commit-0",
+            "content": "{\n  \"apiKey\": \"YOUR_API_KEY_HERE\",\n  \"baseUrl\": \"https://api.example.com\"\n}\n"
+        }
+    ]
+}

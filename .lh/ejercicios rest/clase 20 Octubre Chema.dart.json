@@ -1,0 +1,42 @@
+{
+    "sourceFile": "ejercicios rest/clase 20 Octubre Chema.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1761042730157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761043123099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,25 +12,20 @@\n   await http.get(url, headers: headers).then((http.Response res) {\n     // print(res);\n     final bodyString = res.body;\n     // print(bodyString);\n-\n     final body = jsonDecode(bodyString);\n-\n     // print(\"${body['data']}\");\n-\n     final List<dynamic> data = body['data'];\n-\n     print(data);\n-\n-    List<Persona> personas = data.map((element) {\n-      return Persona.fromJson(element);\n+    List<User> users = data.map((element) {\n+      return User.fromJson(element);\n     }).toList();\n \n     // List<Persona> personas = data.map((e) => Persona.fromJson(e)).toList();\n \n-    for (var persona in personas) {\n-      print(persona.id);\n+    for (var user in users) {\n+      print(user.id);\n     }\n   });\n \n   print(url);\n"
+                },
+                {
+                    "date": 1761043213844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,11 +50,11 @@\n     final body = jsonDecode(bodyString);\n \n     print(\"${body['data']}\");\n \n-    Persona persona = Persona.fromJson(body['data']);\n+    User user = User.fromJson(body['data']);\n \n-    print(persona);\n+    print(user);\n   });\n }\n \n Future<Persona?> getSingleUserObjetct(int id) async {\n"
+                },
+                {
+                    "date": 1761043285065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,17 +26,14 @@\n     for (var user in users) {\n       print(user.id);\n     }\n   });\n-\n   print(url);\n }\n \n void getSingleUser(int id) async {\n   String urlString = \"https://reqres.in/api/users/$id\";\n-\n   Uri url = Uri.parse(urlString);\n-\n   Map<String, String> headers = {\n     //Si la api requiere de autenticación\n     'x-api-key': 'reqres-free-v1',\n   };\n"
+                },
+                {
+                    "date": 1761043387405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,68 +1,45 @@\n import 'dart:convert';\n import 'classUser.dart';\n import 'package:http/http.dart' as http;\n \n-void getReqRespService() async {\n-  String urlString = \"https://reqres.in/api/users\";\n-  Uri url = Uri.parse(urlString);\n-  Map<String, String> headers = {\n-    'x-api-key': 'reqres-free-v1',\n-  };\n+Future<void> getReqRespService() async {\n+  final urlString = 'https://reqres.in/api/users';\n+  final url = Uri.parse(urlString);\n+  final headers = <String, String>{'x-api-key': 'reqres-free-v1'};\n \n-  await http.get(url, headers: headers).then((http.Response res) {\n-    // print(res);\n-    final bodyString = res.body;\n-    // print(bodyString);\n-    final body = jsonDecode(bodyString);\n-    // print(\"${body['data']}\");\n-    final List<dynamic> data = body['data'];\n-    print(data);\n-    List<User> users = data.map((element) {\n-      return User.fromJson(element);\n-    }).toList();\n-\n-    // List<Persona> personas = data.map((e) => Persona.fromJson(e)).toList();\n-\n-    for (var user in users) {\n-      print(user.id);\n-    }\n-  });\n+  final res = await http.get(url, headers: headers);\n+  final body = jsonDecode(res.body) as Map<String, dynamic>;\n+  final List<dynamic> data = body['data'] as List<dynamic>;\n+  print(data);\n+  final users = data.map((e) => User.fromJson(e)).toList();\n+  for (var user in users) {\n+    print(user.id);\n+  }\n   print(url);\n }\n \n-void getSingleUser(int id) async {\n-  String urlString = \"https://reqres.in/api/users/$id\";\n-  Uri url = Uri.parse(urlString);\n-  Map<String, String> headers = {\n-    //Si la api requiere de autenticación\n-    'x-api-key': 'reqres-free-v1',\n-  };\n+Future<void> getSingleUser(int id) async {\n+  final urlString = 'https://reqres.in/api/users/$id';\n+  final url = Uri.parse(urlString);\n+  final headers = <String, String>{'x-api-key': 'reqres-free-v1'};\n \n-  await http.get(url, headers: headers).then((http.Response res) {\n-    print(url);\n-    // print(res);\n-    final bodyString = res.body;\n-    // print(bodyString);\n-\n-    final body = jsonDecode(bodyString);\n-\n-    print(\"${body['data']}\");\n-\n-    User user = User.fromJson(body['data']);\n-\n\\ No newline at end of file\n-    print(user);\n-  });\n+  final res = await http.get(url, headers: headers);\n+  print(url);\n+  final body = jsonDecode(res.body) as Map<String, dynamic>;\n+  print('${body['data']}');\n+  final user = User.fromJson(body['data']);\n+  print(user);\n }\n \n Future<Persona?> getSingleUserObjetct(int id) async {\n   return null;\n }\n \n Future<List<Persona>> getListPersonasObject() async {\n-  return [];\n+  return <Persona>[];\n }\n \n void main() {\n   getReqRespService();\n   getSingleUser(2);\n-}\n+}\n"
+                },
+                {
+                    "date": 1761043444886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,14 +30,14 @@\n   final user = User.fromJson(body['data']);\n   print(user);\n }\n \n-Future<Persona?> getSingleUserObjetct(int id) async {\n+Future<User?> getSingleUserObjetct(int id) async {\n   return null;\n }\n \n-Future<List<Persona>> getListPersonasObject() async {\n-  return <Persona>[];\n+Future<List<User>> getListPersonasObject() async {\n+  return <User>[];\n }\n \n void main() {\n   getReqRespService();\n"
+                },
+                {
+                    "date": 1761043739788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,13 +30,13 @@\n   final user = User.fromJson(body['data']);\n   print(user);\n }\n \n-Future<User?> getSingleUserObjetct(int id) async {\n+Future<User?> getSingleUserObject(int id) async {\n   return null;\n }\n \n-Future<List<User>> getListPersonasObject() async {\n+Future<List<User>> getListUsersObject() async {\n   return <User>[];\n }\n \n void main() {\n"
+                }
+            ],
+            "date": 1761042730157,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\nimport 'classUser.dart';\nimport 'package:http/http.dart' as http;\n\nvoid getReqRespService() async {\n  String urlString = \"https://reqres.in/api/users\";\n  Uri url = Uri.parse(urlString);\n  Map<String, String> headers = {\n    'x-api-key': 'reqres-free-v1',\n  };\n\n  await http.get(url, headers: headers).then((http.Response res) {\n    // print(res);\n    final bodyString = res.body;\n    // print(bodyString);\n\n    final body = jsonDecode(bodyString);\n\n    // print(\"${body['data']}\");\n\n    final List<dynamic> data = body['data'];\n\n    print(data);\n\n    List<Persona> personas = data.map((element) {\n      return Persona.fromJson(element);\n    }).toList();\n\n    // List<Persona> personas = data.map((e) => Persona.fromJson(e)).toList();\n\n    for (var persona in personas) {\n      print(persona.id);\n    }\n  });\n\n  print(url);\n}\n\nvoid getSingleUser(int id) async {\n  String urlString = \"https://reqres.in/api/users/$id\";\n\n  Uri url = Uri.parse(urlString);\n\n  Map<String, String> headers = {\n    //Si la api requiere de autenticación\n    'x-api-key': 'reqres-free-v1',\n  };\n\n  await http.get(url, headers: headers).then((http.Response res) {\n    print(url);\n    // print(res);\n    final bodyString = res.body;\n    // print(bodyString);\n\n    final body = jsonDecode(bodyString);\n\n    print(\"${body['data']}\");\n\n    Persona persona = Persona.fromJson(body['data']);\n\n    print(persona);\n  });\n}\n\nFuture<Persona?> getSingleUserObjetct(int id) async {\n  return null;\n}\n\nFuture<List<Persona>> getListPersonasObject() async {\n  return [];\n}\n\nvoid main() {\n  getReqRespService();\n  getSingleUser(2);\n}"
+        }
+    ]
+}

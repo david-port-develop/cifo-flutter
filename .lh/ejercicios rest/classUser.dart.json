@@ -1,0 +1,22 @@
+{
+    "sourceFile": "ejercicios rest/classUser.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1761040035603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761071527602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,7 +49,7 @@\n         \"avatar\": avatar,\n       };\n   @override\n   String toString() {\n-    return 'Persona(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatar: $avatar)';\n+    return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatar: $avatar)';\n   }\n }\n"
+                }
+            ],
+            "date": 1761040035603,
+            "name": "Commit-0",
+            "content": "class User {\n  final int id;\n  final String email;\n  final String? firstName;\n  final String? lastName;\n  final String? avatar;\n\n  User({\n    required this.id,\n    required this.email,\n    this.firstName,\n    this.lastName,\n    this.avatar,\n  });\n\n  factory User.fromJson(Map<String, dynamic> json) {\n    return User(\n      id: json['id'] ?? 0,\n      email: json['email'] ?? '',\n      firstName: json['first_name'] ?? '',\n      lastName: json['last_name'] ?? '',\n      avatar: json['avatar'] ?? '',\n    );\n  }\n\n  Map<String, dynamic> toJson() {\n    return {\n      'id': id,\n      'email': email,\n      'first_name': firstName,\n      'last_name': lastName,\n      'avatar': avatar,\n    };\n  }\n\n  factory User.fromMap(Map<String, dynamic> json) => User(\n    id: json[\"id\"],\n    email: json[\"email\"],\n    firstName: json[\"first_name\"],\n    lastName: json[\"last_name\"],\n    avatar: json[\"avatar\"],\n  );\n\n  Map<String, dynamic> toMap() => {\n    \"id\": id,\n    \"email\": email,\n    \"first_name\": firstName,\n    \"last_name\": lastName,\n    \"avatar\": avatar,\n  };\n  @override\n  String toString() {\n    return 'Persona(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatar: $avatar)';\n  }\n}\n"
+        }
+    ]
+}

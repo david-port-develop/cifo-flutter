@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ejercicios/ejercicio 17 de Octubre 2025 rest1.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1761037874553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1761037874553,
+            "name": "Commit-0",
+            "content": "\n  import 'dart:convert';\nimport 'package:http/http.dart' as http;\n\nclass User {\n  int id;\n  String email;\n  String firstName;\n  String lastName;\n  String? avatar;\n\n  User({\n    required this.id,\n    required this.email,\n    required this.firstName,\n    required this.lastName,\n    this.avatar,\n  });\n\n  // 💡 Constructor factory para crear una instancia de User desde un mapa JSON\n  factory User.fromJson(Map<String, dynamic> json) {\n    return User(\n      id: json['id'] as int,\n      email: json['email'] as String,\n      firstName: json['first_name'] as String, // ⚠️ Observa la clave JSON típica\n      lastName: json['last_name'] as String,   // ⚠️ Observa la clave JSON típica\n      avatar: json['avatar'] as String?,\n    );\n  }\n\n  // 💡 Método para listar los datos del objeto (útil para imprimir)\n  @override\n  String toString() {\n    return 'User(id: $id, name: $firstName $lastName, email: $email, avatar: $avatar)';\n  }\n}\n\nvoid main {\n\n\n// ⚠️ Este es el paso clave: mapear el JSON a una lista de objetos User.\nList<User> parseUsers(String responseBody) {\n  // 1. Decodificar la cadena JSON a un Map (o List, dependiendo del formato de la API).\n  final Map<String, dynamic> decodedJson = jsonDecode(responseBody);\n  \n  // 2. Extraer la lista de usuarios (asumiendo que está en la clave 'data')\n  final List<dynamic> userListJson = decodedJson['data'];\n\n  // 3. Usar el constructor 'User.fromJson' para convertir cada mapa JSON a un objeto User.\n  return userListJson.map((json) => User.fromJson(json as Map<String, dynamic>)).toList();\n}\n\n// 🌐 Función de ejemplo para obtener los datos de la API (usando un endpoint de prueba)\nFuture<List<User>> fetchUsers() async {\n  const String url = 'https://reqres.in/api/users?page=1'; // Ejemplo de URL REST\n  \n  try {\n    final response = await http.get(Uri.parse(url));\n\n    if (response.statusCode == 200) {\n      // Si el servidor devuelve una respuesta \"OK\" (status 200),\n      // procesamos el JSON.\n      return parseUsers(response.body);\n    } else {\n      // Si la respuesta no fue 200, lanza un error.\n      throw Exception('Failed to load users. Status code: ${response.statusCode}');\n    }\n  } catch (e) {\n    throw Exception('Error fetching users: $e');\n  }\n}\n\n}"
+        }
+    ]
+}

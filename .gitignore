@@ -1,0 +1,4 @@
+# Ignore local user service config that may contain API keys
+# Ignore individual file and any other JSON config files in the folder
+/ejercicios rest/config/user_service_config.json
+/ejercicios rest/config/*.json

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "ejercicios rest/user_service_config.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1761041805144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761070186035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +1,29 @@\n import 'dart:convert';\n import 'dart:io';\n \n-class UserServiceConfig {\n+class configService {\n   final String? apiKey;\n   final String? baseUrl;\n \n-  UserServiceConfig({this.apiKey, this.baseUrl});\n+  configService({this.apiKey, this.baseUrl});\n \n-  factory UserServiceConfig.fromJson(Map<String, dynamic> json) {\n-    return UserServiceConfig(\n+  factory configService.fromJson(Map<String, dynamic> json) {\n+    return configService(\n       apiKey: json['apiKey'] as String?,\n       baseUrl: json['baseUrl'] as String?,\n     );\n   }\n \n   /// Carga la configuración desde un archivo JSON en [path]. Lanzará excepciones\n   /// si el archivo no existe o el JSON es inválido.\n-  static Future<UserServiceConfig> fromFile(String path) async {\n+  static Future<configService> fromFile(String path) async {\n     final file = File(path);\n     if (!await file.exists()) {\n       throw Exception('Config file not found: $path');\n     }\n     final contents = await file.readAsString();\n     final Map<String, dynamic> json =\n         jsonDecode(contents) as Map<String, dynamic>;\n-    return UserServiceConfig.fromJson(json);\n+    return configService.fromJson(json);\n   }\n }\n"
+                }
+            ],
+            "date": 1761041805144,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\nimport 'dart:io';\n\nclass UserServiceConfig {\n  final String? apiKey;\n  final String? baseUrl;\n\n  UserServiceConfig({this.apiKey, this.baseUrl});\n\n  factory UserServiceConfig.fromJson(Map<String, dynamic> json) {\n    return UserServiceConfig(\n      apiKey: json['apiKey'] as String?,\n      baseUrl: json['baseUrl'] as String?,\n    );\n  }\n\n  /// Carga la configuración desde un archivo JSON en [path]. Lanzará excepciones\n  /// si el archivo no existe o el JSON es inválido.\n  static Future<UserServiceConfig> fromFile(String path) async {\n    final file = File(path);\n    if (!await file.exists()) {\n      throw Exception('Config file not found: $path');\n    }\n    final contents = await file.readAsString();\n    final Map<String, dynamic> json =\n        jsonDecode(contents) as Map<String, dynamic>;\n    return UserServiceConfig.fromJson(json);\n  }\n}\n"
+        }
+    ]
+}

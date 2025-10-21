@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ejercicios rest/ejercicio usando service.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1761070186031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1761070186031,
+            "name": "Commit-0",
+            "content": "import 'dart:io';\nimport 'classUser.dart';\nimport 'user_service.dart';\nimport 'user_service_config.dart';\n\nvoid main() async {\n  // Intentar cargar configuración desde archivo JSON (opcional). Ruta típica: config/user_service_config.json\n  configService? config;\n  final configPath = 'config/user_service_config.json';\n\n  if (await File(configPath).exists()) {\n    try {\n      config = await configService.fromFile(configPath);\n      print('Cargada configuración desde $configPath');\n    } catch (e) {\n      print('Error cargando configuración: $e');\n    }\n  }\n\n  final service = UserService(config: config);\n  // Lista de usuarios obtenidos de la API REST\n  try {\n    List<User> users = await service.fetchUsers();\n    for (var user in users) {\n      print(user);\n    }\n\n    // Ejemplo: recuperar un usuario por su ID\n    try {\n      final single = await service.fetchUserById(2);\n      print('\\nUsuario con id=2:');\n      print(single);\n    } catch (e) {\n      print('Error al obtener usuario por id: $e');\n    }\n  } catch (e) {\n    print(e);\n  }\n}\n"
+        }
+    ]
+}

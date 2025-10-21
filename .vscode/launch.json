@@ -1,0 +1,54 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ejercicios antes de rest",
+            "cwd": "ejercicios antes de rest",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ejercicios antes de rest (profile mode)",
+            "cwd": "ejercicios antes de rest",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ejercicios antes de rest (release mode)",
+            "cwd": "ejercicios antes de rest",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ejercicios rest",
+            "cwd": "ejercicios rest",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ejercicios rest (profile mode)",
+            "cwd": "ejercicios rest",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ejercicios rest (release mode)",
+            "cwd": "ejercicios rest",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "entregas",
+            "cwd": "entregas",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ejercicios rest/user_service.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1761040584569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761041353327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,10 @@\n     try {\n       final response = await client.get(Uri.parse(url));\n       if (response.statusCode == 200) {\n         final Map<String, dynamic> decoded = jsonDecode(response.body);\n-        final Map<String, dynamic> userJson = decoded['data'] as Map<String, dynamic>;\n+        final Map<String, dynamic> userJson =\n+            decoded['data'] as Map<String, dynamic>;\n         return User.fromJson(userJson);\n       } else if (response.statusCode == 404) {\n         throw Exception('User with id $id not found (404).');\n       } else {\n"
+                },
+                {
+                    "date": 1761070186034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   /// Crea un UserService. Si no se proporciona un [client], se crea uno por defecto.\n   /// [apiKey] se inyecta externamente (p. ej. desde variables de entorno o configuración) y\n   /// se usará automáticamente en el header Authorization de las peticiones si está presente.\n   /// Si se proporciona [config], sus valores tienen prioridad sobre [apiKey] directo.\n-  UserService({http.Client? client, String? apiKey, UserServiceConfig? config})\n+  UserService({http.Client? client, String? apiKey, configService? config})\n       : client = client ?? http.Client(),\n         apiKey = config?.apiKey ?? apiKey,\n         baseUrl = config?.baseUrl ?? 'https://reqres.in';\n \n"
+                }
+            ],
+            "date": 1761040584569,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\nimport 'package:http/http.dart' as http;\nimport 'classUser.dart';\n\nclass UserService {\n  final http.Client client;\n\n  /// Crea un UserService. Si no se proporciona un [client], se crea uno por defecto.\n  UserService({http.Client? client}) : client = client ?? http.Client();\n\n  // Convierte la respuesta JSON en una lista de User\n  List<User> parseUsers(String responseBody) {\n    final Map<String, dynamic> decodedJson = jsonDecode(responseBody);\n    final List<dynamic> userListJson = decodedJson['data'];\n    return userListJson\n        .map((json) => User.fromJson(json as Map<String, dynamic>))\n        .toList();\n  }\n\n  // Obtiene usuarios desde la API REST\n  Future<List<User>> fetchUsers() async {\n    const String url = 'https://reqres.in/api/users?page=1';\n    try {\n      final response = await client.get(Uri.parse(url));\n      if (response.statusCode == 200) {\n        return parseUsers(response.body);\n      } else {\n        throw Exception(\n            'Failed to load users. Status code: ${response.statusCode}');\n      }\n    } catch (e) {\n      throw Exception('Error fetching users: $e');\n    }\n  }\n}\n"
+        }
+    ]
+}
