@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ejercicios/ejercicio 15 alt.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1760636028117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1760636028117,
+            "name": "Commit-0",
+            "content": "class Persona {\n  final Latible corazon; // ✅ Depende de una interfaz, no implementación\n\n  Persona(this.corazon); // ✅ Inyección por constructor\n\n  void vivir() => corazon.latir();\n}\n\nabstract class Latible {\n  void latir();\n}\n\nclass Corazon implements Latible {\n  @override\n  void latir() => print(\"❤️ Latido natural\");\n}\n\nclass CorazonArtificial implements Latible {\n  @override\n  void latir() => print(\"💙 Latido artificial\");\n}\n\n// Uso:\nvoid main() {\n  Persona personaNatural = Persona(Corazon());\n  Persona personaPaciente = Persona(CorazonArtificial());\n\n  personaNatural.vivir(); // ❤️ Latido natural\n  personaPaciente.vivir(); // 💙 Latido artificial\n}\n"
+        }
+    ]
+}

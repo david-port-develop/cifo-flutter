@@ -26,7 +26,7 @@ class Mammal extends Animal {
   Mammal(super.nombre);
 
   @override
-  void mover() => print("$nombre camina sobre la tierra");
+  void mover() => print("Soy un $nombre que camina sobre la tierra");
 }
 // Lógica: Herencia simple con redefinición de método usando override
 
@@ -34,7 +34,7 @@ class Bird extends Animal {
   Bird(super.nombre);
 
   @override
-  void mover() => print("$nombre vuela por el aire");
+  void mover() => print("Soy un $nombre que vuela por el aire");
 }
 // Lógica: Sobrescritura de método para comportamiento específico de ave
 
@@ -42,7 +42,7 @@ class Fish extends Animal {
   Fish(super.nombre);
 
   @override
-  void mover() => print("$nombre nada en el agua");
+  void mover() => print("Soy un $nombre que nada en el agua");
 }
 // Lógica: Especialización de comportamiento mediante herencia
 
@@ -189,8 +189,8 @@ class Ave {
 // Lógica: Encapsulación estricta con validación en setter
 
 // 4. Herencia + método extra
-class Pez extends AnimalAlternativo {
-  Pez(String nombre) : super(nombre, 'pez');
+class Pez extends Animal {
+  Pez(super.nombre);
 
   void nadar() => print("$nombre está nadando.");
 }
@@ -383,7 +383,6 @@ void main() {
 
   // Ejercicio 4: Pez con método adicional
   Pez pezAlternativo = Pez('Nemo');
-  pezAlternativo.descripcion();
   pezAlternativo.nadar();
 
   // Ejercicio 5: Constructores nombrados

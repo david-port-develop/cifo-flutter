@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1760532058152,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1760952717295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,10 @@\n environment:\n   sdk: '>=3.0.0 <4.0.0'\n \n dependencies:\n-  intl: ^0.20.0\n\\ No newline at end of file\n+  intl: ^0.20.0\n+  flutter:\n+    sdk: flutter\n+  # ⬇️ Aquí es donde lo agregas\n+  http: ^1.2.1 \n+  # ⬆️ Usa la versión más reciente disponible (puedes buscarla en pub.dev)\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1760532058152,

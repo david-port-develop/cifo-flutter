@@ -8,3 +8,8 @@ environment:
 
 dependencies:
   intl: ^0.20.0
+  flutter:
+    sdk: flutter
+  # ⬇️ Aquí es donde lo agregas
+  http: ^1.2.1 
+  # ⬆️ Usa la versión más reciente disponible (puedes buscarla en pub.dev)

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "ejercicios/ejercicio 17 de Octubre 2025.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1760716903622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1760717335811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,17 @@\n class User {\n-  Map<String, dynamic> data = {\n-    \"id\": 0,\n-    \"email\": \"\",\n-    \"first_name\": \"\",\n-    \"last_name\": \"\",\n-    \"avatar\": \"\"\n-  };\n+  final int id;\n+  final String email;\n+  final String firstName;\n+  final String lastName;\n+  final String? avatar; \n+\n+  User({\n+    required this.id,\n+    required this.email,\n+    required this.firstName,\n+    required this.lastName,\n+    this.avatar,\n+  });\n }\n \n void main() {}\n"
+                },
+                {
+                    "date": 1760717848190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,19 @@\n class User {\n-  final int id;\n-  final String email;\n-  final String firstName;\n-  final String lastName;\n-  final String? avatar;\n+  int? id;\n+  String? email;\n+  String? firstName;\n+  String? lastName;\n+  String? avatar;\n \n   User({\n-    required this.id,\n-    required this.email,\n-    required this.firstName,\n-    required this.lastName,\n+    this.id,\n+    this.email,\n+    this.firstName,\n+    this.lastName,\n     this.avatar,\n   });\n }\n \n-void main() {}\n+void main() {\n+  User user = User();\n+}\n"
+                },
+                {
+                    "date": 1760952848058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,8 @@\n+\n+  import 'dart:convert';\n+import 'package:http/http.dart' as http; // Necesitas agregar http a tu pubspec.yaml\n+\n class User {\n   int id;\n   String email;\n   String firstName;\n@@ -11,9 +15,59 @@\n     required this.firstName,\n     required this.lastName,\n     this.avatar,\n   });\n+\n+  // 💡 Constructor factory para crear una instancia de User desde un mapa JSON\n+  factory User.fromJson(Map<String, dynamic> json) {\n+    return User(\n+      id: json['id'] as int,\n+      email: json['email'] as String,\n+      firstName: json['first_name'] as String, // ⚠️ Observa la clave JSON típica\n+      lastName: json['last_name'] as String,   // ⚠️ Observa la clave JSON típica\n+      avatar: json['avatar'] as String?,\n+    );\n+  }\n+\n+  // 💡 Método para listar los datos del objeto (útil para imprimir)\n+  @override\n+  String toString() {\n+    return 'User(id: $id, name: $firstName $lastName, email: $email, avatar: $avatar)';\n+  }\n }\n \n-void main() {\n-  User user = User();\n+void main {\n+\n+\n+// ⚠️ Este es el paso clave: mapear el JSON a una lista de objetos User.\n+List<User> parseUsers(String responseBody) {\n+  // 1. Decodificar la cadena JSON a un Map (o List, dependiendo del formato de la API).\n+  final Map<String, dynamic> decodedJson = jsonDecode(responseBody);\n+  \n+  // 2. Extraer la lista de usuarios (asumiendo que está en la clave 'data')\n+  final List<dynamic> userListJson = decodedJson['data'];\n+\n+  // 3. Usar el constructor 'User.fromJson' para convertir cada mapa JSON a un objeto User.\n+  return userListJson.map((json) => User.fromJson(json as Map<String, dynamic>)).toList();\n }\n+\n+// 🌐 Función de ejemplo para obtener los datos de la API (usando un endpoint de prueba)\n+Future<List<User>> fetchUsers() async {\n+  const String url = 'https://reqres.in/api/users?page=1'; // Ejemplo de URL REST\n+  \n+  try {\n+    final response = await http.get(Uri.parse(url));\n+\n+    if (response.statusCode == 200) {\n+      // Si el servidor devuelve una respuesta \"OK\" (status 200),\n+      // procesamos el JSON.\n+      return parseUsers(response.body);\n+    } else {\n+      // Si la respuesta no fue 200, lanza un error.\n+      throw Exception('Failed to load users. Status code: ${response.statusCode}');\n+    }\n+  } catch (e) {\n+    throw Exception('Error fetching users: $e');\n+  }\n+}\n+\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1760716903622,
+            "name": "Commit-0",
+            "content": "class User {\n  Map<String, dynamic> data = {\n    \"id\": 0,\n    \"email\": \"\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"avatar\": \"\"\n  };\n}\n\nvoid main() {}\n"
+        }
+    ]
+}
