@@ -55,7 +55,7 @@ Future<void> getReqRespService() async {
   }
 }
 
-Future<void> getSingleUser(int id) async {
+Future<User> getSingleUser(int id) async {
   final cfg = await loadConfigHeaders();
   final baseUrl = cfg['baseUrl']!;
   final apiKey = cfg['apiKey']!;
@@ -64,7 +64,7 @@ Future<void> getSingleUser(int id) async {
   final url = Uri.parse(urlString);
   final headers = <String, String>{};
   if (apiKey.isNotEmpty) headers['x-api-key'] = apiKey;
-
+  //Solo en caso de 200
   try {
     final res = await http.get(url, headers: headers);
     if (res.statusCode == 404) {
@@ -77,7 +77,7 @@ Future<void> getSingleUser(int id) async {
     final body = jsonDecode(res.body) as Map<String, dynamic>;
     print('${body['data']}');
     final user = User.fromJson(body['data']);
-    print(user);
+    return (user);
   } catch (e) {
     print('Error in getSingleUser($id): $e');
     rethrow;
@@ -86,8 +86,8 @@ Future<void> getSingleUser(int id) async {
 
 Future<User?> getSingleUserObject(int id) async {
   try {
-    await getSingleUser(id);
-    return null;
+    final user = getSingleUser(id);
+    return (user);
   } catch (e) {
     print('Error in getSingleUserObject: $e');
     return null;
