@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ejercicios rest/ejercicio 23 Oct.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1761325187405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761325328152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,6 +130,6 @@\n   await ejercicio1_estructuraJSON();\n \n   print('\\n\\n--- Ejecutando Ejercicio 2 ---');\n   await fetchCountry('france');\n-  await fetchCountry('unlikelycountryname'); // Prueba de error 404\n+  await fetchCountry('otropais'); // Prueba de error 404\n }\n"
+                },
+                {
+                    "date": 1761325545136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n // EJERCICIO 1: Comprender la estructura del JSON anidado\n // =============================================================================\n \n /// Tarea 1: Realiza una petición simple y analiza la estructura del JSON.\n-Future<void> ejercicio1_estructuraJSON() async {\n+Future<void> estructuraJSON() async {\n   // 1. Petición a la v2 de la API, como se indica en el enunciado.\n   final url = Uri.parse('https://restcountries.com/v2/name/peru');\n \n   try {\n@@ -126,9 +126,9 @@\n }\n \n void main() async {\n   print('--- Ejecutando Ejercicio 1 ---');\n-  await ejercicio1_estructuraJSON();\n+  await estructuraJSON();\n \n   print('\\n\\n--- Ejecutando Ejercicio 2 ---');\n   await fetchCountry('france');\n   await fetchCountry('otropais'); // Prueba de error 404\n"
+                }
+            ],
+            "date": 1761325187405,
+            "name": "Commit-0",
+            "content": "\n"
+        }
+    ]
+}
