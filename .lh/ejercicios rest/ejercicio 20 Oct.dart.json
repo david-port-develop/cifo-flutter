@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1761070817887,
@@ -28,6 +28,14 @@
                 {
                     "date": 1761129998054,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,18 +54,18 @@\n     rethrow;\n   }\n }\n \n-Future<void> getSingleUser(int id) async {\n+Future<User> getSingleUser(int id) async {\n   final cfg = await loadConfigHeaders();\n   final baseUrl = cfg['baseUrl']!;\n   final apiKey = cfg['apiKey']!;\n \n   final urlString = '$baseUrl/api/users/$id';\n   final url = Uri.parse(urlString);\n   final headers = <String, String>{};\n   if (apiKey.isNotEmpty) headers['x-api-key'] = apiKey;\n-\n+  //Solo en caso de 200\n   try {\n     final res = await http.get(url, headers: headers);\n     if (res.statusCode == 404) {\n       throw Exception('User with id $id not found (404)');\n@@ -76,19 +76,19 @@\n     print(url);\n     final body = jsonDecode(res.body) as Map<String, dynamic>;\n     print('${body['data']}');\n     final user = User.fromJson(body['data']);\n-    print(user);\n+    return(user);\n   } catch (e) {\n     print('Error in getSingleUser($id): $e');\n     rethrow;\n   }\n }\n \n Future<User?> getSingleUserObject(int id) async {\n   try {\n-    await getSingleUser(id);\n-    return null;\n+    final user = getSingleUser(id);\n+    return (user);\n   } catch (e) {\n     print('Error in getSingleUserObject: $e');\n     return null;\n   }\n"
+                },
+                {
+                    "date": 1761318383690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,9 @@\n import 'classUser.dart';\n import 'package:http/http.dart' as http;\n \n Future<Map<String, String>> loadConfigHeaders() async {\n-  // Require a dedicated file with only the API key. Resolve it relative to the\n-  // script location (not the current working directory), then fail fast if\n-  // missing or invalid.\n+\n   final scriptDir = File(Platform.script.toFilePath()).parent.path;\n   final apiKeyPath = '$scriptDir/config/apikey.json';\n   final apiKeyFile = File(apiKeyPath);\n   if (!await apiKeyFile.exists()) {\n"
+                },
+                {
+                    "date": 1761318500521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import 'dart:convert';\n import 'dart:io';\n-import 'classUser.dart';\n+import 'clases/classUser.dart';\n import 'package:http/http.dart' as http;\n \n Future<Map<String, String>> loadConfigHeaders() async {\n   final scriptDir = File(Platform.script.toFilePath()).parent.path;\n"
                 }
             ],
             "date": 1761070817887,

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ejercicios rest/debug_languages.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1761215742251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1761215742251,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\nimport 'package:http/http.dart' as http;\n\nFuture<void> debugLanguages() async {\n  try {\n    final response =\n        await http.get(Uri.parse('https://restcountries.com/v3.1/name/spain'));\n    if (response.statusCode == 200) {\n      final List<dynamic> data = jsonDecode(response.body);\n      final country = data[0]; // Primer país del resultado\n\n      print('=== ESTRUCTURA DE LANGUAGES ===');\n      print(JsonEncoder.withIndent('  ').convert(country['languages']));\n\n      print('\\n=== IDIOMAS DEL PAÍS ===');\n      final languages = country['languages'] as Map<String, dynamic>;\n\n      // 1. Imprimir todos los idiomas\n      print('\\nTodos los idiomas:');\n      languages.forEach((code, nativeName) {\n        print('$code: $nativeName');\n      });\n\n      // 2. Obtener el primer idioma\n      print('\\nPrimer idioma:');\n      if (languages.isNotEmpty) {\n        final firstLang = languages.entries.first;\n        print('Código: ${firstLang.key}');\n        print('Nombre: ${firstLang.value}');\n      }\n\n      // 3. Obtener un idioma específico (por ejemplo, español)\n      print('\\nIdioma específico (español):');\n      print('Español: ${languages['spa']}');\n    }\n  } catch (e) {\n    print('Error: $e');\n  }\n}\n\nvoid main() async {\n  await debugLanguages();\n}\n"
+        }
+    ]
+}

@@ -1,12 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
-import 'classUser.dart';
+import 'clases/classUser.dart';
 import 'package:http/http.dart' as http;
 
 Future<Map<String, String>> loadConfigHeaders() async {
-  // Require a dedicated file with only the API key. Resolve it relative to the
-  // script location (not the current working directory), then fail fast if
-  // missing or invalid.
   final scriptDir = File(Platform.script.toFilePath()).parent.path;
   final apiKeyPath = '$scriptDir/config/apikey.json';
   final apiKeyFile = File(apiKeyPath);

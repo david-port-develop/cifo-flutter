@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ejercicios rest/debug_native_name.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1761214855852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1761214855852,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\nimport 'package:http/http.dart' as http;\n\nFuture<void> debugNativeName() async {\n  try {\n    final response = await http.get(Uri.parse('https://restcountries.com/v3.1/name/spain'));\n    if (response.statusCode == 200) {\n      final List<dynamic> data = jsonDecode(response.body);\n      final country = data[0]; // Primer país del resultado\n      \n      print('=== ESTRUCTURA DE NAME Y NATIVENAME ===');\n      print(JsonEncoder.withIndent('  ').convert(country['name']));\n      \n      print('\\n=== ACCEDIENDO A NATIVENAME ===');\n      if (country['name']['nativeName'] != null) {\n        country['name']['nativeName'].forEach((langCode, nameData) {\n          print('Idioma: $langCode');\n          print('  Nombre oficial: ${nameData['official']}');\n          print('  Nombre común: ${nameData['common']}');\n        });\n      }\n    }\n  } catch (e) {\n    print('Error: $e');\n  }\n}\n\nvoid main() async {\n  await debugNativeName();\n}"
+        }
+    ]
+}
