@@ -20,37 +20,22 @@ Este repositorio contiene una colección completa de ejercicios en Dart organiza
 - Dart SDK instalado
 - Editor de código (VS Code recomendado)
 
-### Estructura del Proyecto:
-```
-darts/
-├── pubspec.yaml
-├── funciones_comunes.dart
-├── ejercicios_7_oct.dart
-├── ejercicios_8_oct.dart
-├── ejercicios_9_oct.dart
-├── ejercicios_10_oct.dart
-└── README.md
-```
-
 ### Ejecución:
 ```bash
 # Instalar dependencias
 dart pub get
 
 # Instalar dependencias
-dart pub get
-
 # Ejecutar ejercicios (usar comillas por los espacios)
-dart "ejercicios 7 oct.dart"
-dart "ejercicios 8 oct.dart"
-dart "ejercicios 9 oct.dart"
-dart "ejercicios 10 oct.dart"
+dart "ejercicios antes de rest/ejercicio 7 oct.dart"
+# ... y así para los demás ejercicios de fundamentos
 
 # Alternativa en sistemas Unix/Linux/Mac:
-dart ejercicios\ 7\ oct.dart
-dart ejercicios\ 8\ oct.dart  
-dart ejercicios\ 9\ oct.dart
-dart ejercicios\ 10\ oct.dart
+dart ejercicios\ antes\ de\ rest/ejercicio\ 7\ oct.dart
+# ... y así para los demás ejercicios de fundamentos
+
+dart "ejercicios rest/ejercicio 21 Oct A.dart"
+# ... y así para los demás ejercicios de REST
 
 ## 🛠️ Características Técnicas
 
@@ -69,9 +54,13 @@ dart ejercicios\ 10\ oct.dart
 ### Programación Asíncrona:
 - Simulación de operaciones de larga duración
 - Coordinación de múltiples tareas async
-- Manejo de errores en operaciones asíncronas
-- Flujos de ejecución controlados
 
----
+### Consumo de APIs REST:
+- Peticiones HTTP a endpoints públicos (`reqres.in`, `restcountries.com`).
+- Modelado de datos desde JSON con constructores `factory .fromJson()`.
+- Creación de una clase de servicio (`ReqResService`) para encapsular la lógica de la API.
+- Manejo de respuestas paginadas con un modelo genérico `ApiResponse<T>`.
+- Parseo de estructuras JSON complejas y anidadas.
+
 
 **¡Proyecto de aprendizaje completo de Dart para el curso de Flutter!** 🎯

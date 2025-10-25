@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1760009381543,
@@ -28,6 +28,14 @@
                 {
                     "date": 1761381038112,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n - **7 de Octubre:** Fundamentos - Condicionales, Bucles y Listas\n - **8 de Octubre:** Controles de Flujo - Condicionales Avanzados y Bucles  \n - **9 de Octubre:** Funciones - Modularización y Reutilización\n - **10 de Octubre:** Funciones Avanzadas - Async/Await y Manejo de Errores\n+- **20-23 de Octubre:** APIs REST - Peticiones HTTP, Modelado de Datos y JSON\n \n ## 🚀 Cómo Ejecutar\n \n ### Requisitos:\n"
+                },
+                {
+                    "date": 1761381195247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,22 +37,19 @@\n # Instalar dependencias\n dart pub get\n \n # Instalar dependencias\n-dart pub get\n-\n # Ejecutar ejercicios (usar comillas por los espacios)\n-dart \"ejercicios 7 oct.dart\"\n-dart \"ejercicios 8 oct.dart\"\n-dart \"ejercicios 9 oct.dart\"\n-dart \"ejercicios 10 oct.dart\"\n+dart \"ejercicios antes de rest/ejercicio 7 oct.dart\"\n+# ... y así para los demás ejercicios de fundamentos\n \n # Alternativa en sistemas Unix/Linux/Mac:\n-dart ejercicios\\ 7\\ oct.dart\n-dart ejercicios\\ 8\\ oct.dart  \n-dart ejercicios\\ 9\\ oct.dart\n-dart ejercicios\\ 10\\ oct.dart\n+dart ejercicios\\ antes\\ de\\ rest/ejercicio\\ 7\\ oct.dart\n+# ... y así para los demás ejercicios de fundamentos\n \n+dart \"ejercicios rest/ejercicio 21 Oct A.dart\"\n+# ... y así para los demás ejercicios de REST\n+\n ## 🛠️ Características Técnicas\n \n ### Módulo de Funciones Comunes:\n - Validación robusta de entradas numéricas y de texto\n@@ -68,10 +65,14 @@\n \n ### Programación Asíncrona:\n - Simulación de operaciones de larga duración\n - Coordinación de múltiples tareas async\n-- Manejo de errores en operaciones asíncronas\n-- Flujos de ejecución controlados\n \n----\n+### Consumo de APIs REST (NUEVO):\n+- Peticiones HTTP a endpoints públicos (`reqres.in`, `restcountries.com`).\n+- Modelado de datos desde JSON con constructores `factory .fromJson()`.\n+- Creación de una clase de servicio (`ReqResService`) para encapsular la lógica de la API.\n+- Manejo de respuestas paginadas con un modelo genérico `ApiResponse<T>`.\n+- Parseo de estructuras JSON complejas y anidadas.\n \n+\n **¡Proyecto de aprendizaje completo de Dart para el curso de Flutter!** 🎯\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761381242448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,20 +19,8 @@\n ### Requisitos:\n - Dart SDK instalado\n - Editor de código (VS Code recomendado)\n \n-### Estructura del Proyecto:\n-```\n-darts/\n-├── pubspec.yaml\n-├── funciones_comunes.dart\n-├── ejercicios_7_oct.dart\n-├── ejercicios_8_oct.dart\n-├── ejercicios_9_oct.dart\n-├── ejercicios_10_oct.dart\n-└── README.md\n-```\n-\n ### Ejecución:\n ```bash\n # Instalar dependencias\n dart pub get\n@@ -66,9 +54,9 @@\n ### Programación Asíncrona:\n - Simulación de operaciones de larga duración\n - Coordinación de múltiples tareas async\n \n-### Consumo de APIs REST (NUEVO):\n+### Consumo de APIs REST:\n - Peticiones HTTP a endpoints públicos (`reqres.in`, `restcountries.com`).\n - Modelado de datos desde JSON con constructores `factory .fromJson()`.\n - Creación de una clase de servicio (`ReqResService`) para encapsular la lógica de la API.\n - Manejo de respuestas paginadas con un modelo genérico `ApiResponse<T>`.\n"
                 }
             ],
             "date": 1760009381543,
