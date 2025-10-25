@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1761041988725,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761381485843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n # Ignore local user service config that may contain API keys\n # Ignore individual file and any other JSON config files in the folder\n-/ejercicios rest/config/user_service_config.json\n-/ejercicios rest/config/*.json\n+#/ejercicios rest/config/user_service_config.json\n+#/ejercicios rest/config/*.json\n"
+                },
+                {
+                    "date": 1761381514116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,3 @@\n-# Ignore local user service config that may contain API keys\n-# Ignore individual file and any other JSON config files in the folder\n+Para usar un apikey y no subirlo a un repositorio público git, descomenta las siguientes líneas:\n #/ejercicios rest/config/user_service_config.json\n #/ejercicios rest/config/*.json\n"
                 }
             ],
             "date": 1761041988725,
