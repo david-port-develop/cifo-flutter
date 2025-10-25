@@ -12,6 +12,7 @@ Este repositorio contiene una colección completa de ejercicios en Dart organiza
 - **8 de Octubre:** Controles de Flujo - Condicionales Avanzados y Bucles  
 - **9 de Octubre:** Funciones - Modularización y Reutilización
 - **10 de Octubre:** Funciones Avanzadas - Async/Await y Manejo de Errores
+- **20-23 de Octubre:** APIs REST - Peticiones HTTP, Modelado de Datos y JSON
 
 ## 🚀 Cómo Ejecutar
 
