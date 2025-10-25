@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1761071407858,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761381650795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+{\n+  \"apiKey\": \"reqres-free-v1\",\n+  \"baseUrl\": \"https://reqres.in\"\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1761071407858,
